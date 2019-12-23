@@ -128,6 +128,7 @@ class AFLExecutor(object):
 
         self.tmp_dir = tempfile.mkdtemp()
         cmd, afl_path, qemu_mode = self.parse_fuzzer_stats()
+        cmd = self.cmd
         self.minimizer = minimizer.TestcaseMinimizer(
             cmd, afl_path, self.output, qemu_mode)
         self.import_state()
