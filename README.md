@@ -44,14 +44,13 @@ our [vagrant](vagrant) directory.
 #   INPUT: input seed files
 #   OUTPUT: output directory
 #   AFL_CMDLINE: command line for a testing program for AFL (ASAN + instrumented)
-#   QSYM_CMDLINE: command line for a testing program for QSYM (Non-instrumented)
 
 # run AFL master
 $ $(AFL_ROOT)/afl-fuzz -M afl-master -i $(INPUT) -o $(OUTPUT) -- $(AFL_CMDLINE)
 # run AFL slave
 $ $(AFL_ROOT)/afl-fuzz -S afl-slave -i $(INPUT) -o $(OUTPUT) -- $(AFL_CMDLINE)
 # run QSYM
-$ bin/run_qsym_afl.py -a afl-slave -o $(OUTPUT) -n qsym -- $(QSYM_CMDLINE)
+$ bin/run_qsym_afl.py -a afl-slave -o $(OUTPUT) -n qsym -- $(AFL_CMDLINE)
 ~~~~
 
 ## Run for testing
