@@ -16,4 +16,5 @@ WORKDIR /workdir/qsym
 COPY . /workdir/qsym
 
 RUN ./setup.sh
-RUN pip install .
+RUN pip install more-itertools==8.0.2
+RUN pip install . --no-cache-dir
