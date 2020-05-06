@@ -44,6 +44,7 @@ our [vagrant](vagrant) directory.
 #   INPUT: input seed files
 #   OUTPUT: output directory
 #   AFL_CMDLINE: command line for a testing program for AFL (ASAN + instrumented)
+#   Note: Binary for QSYM must be a binary compiled with AFL, but WITHOUT ASAN
 
 # run AFL master
 $ $(AFL_ROOT)/afl-fuzz -M afl-master -i $(INPUT) -o $(OUTPUT) -- $(AFL_CMDLINE)
